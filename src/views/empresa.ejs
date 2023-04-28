@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+*
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins', sans-serif;
+ }
+        body {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: #000000;
+            justify-content: center;
+            align-items: center;
+            font-family: arial;
+            margin: 0;
+   
+        }
+        
+        header{
+            position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    
+    }
+
+header .logo{
+     color: #000000;
+     font-size: 700;
+     text-decoration: none;
+     font-size: 100PX;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+}
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+header ul li{
+    list-style: none;
+    margin: 20px;
+}
+header ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 900px;
+
+}
+header ul li a:hover, 
+header ul li a.active
+{
+    background: #bbbbbb;
+    opacity: 90%;
+
+}
+
+
+        .container {
+            width: 1000px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .container .card {
+            position: relative;
+        }
+        
+        .container .card .face {
+            width: 300px;
+            height: 200px;
+            transition: .4s;
+        }
+        
+        .container .card .face.face1 {
+            position: relative;
+            background: rgb(255, 255, 255);
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            z-index: 1;
+            transform: translateY(100px);
+        }
+        
+        .container .card:hover .face.face1 {
+            transform: translateY(0);
+            box-shadow: inset 0 0 60px rgb(253, 250, 250), inset 20px 0 80px rgb(220, 122, 250), inset -20px 0 80px #0ff, inset 20px 0 300px #f0f, inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px #0ff;
+        }
+        
+        .container .card .face.face1 .content {
+            opacity: .2;
+            transition: 0.5s;
+            text-align: center;
+        }
+        
+        .container .card:hover .face.face1 .content {
+            opacity: 1;
+        }
+        
+        .container .card .face.face1 .content i {
+            font-size: 3em;
+            color: #000000;
+            display: inline-block;
+        }
+        
+        .container .card .face.face1 .content h3 {
+            font-size: 1em;
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+        
+        .container .card .face.face1 .content a {
+            transition: .5s;
+        }
+        
+        .container .card .face.face2 {
+            position: relative;
+            background: rgb(0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 20px 50px rgba(172, 170, 170, 0.8);
+            transform: translateY(-100px);
+            
+        }
+        
+        .container .card:hover .face.face2 {
+            transform: translateY(0);
+        }
+        
+        .container .card .face.face2 .content p,
+        a {
+            font-size: 10pt;
+            margin: 0;
+            padding: 0;
+            color: rgb(0, 0, 0);
+            color:#fff;
+        }
+        
+        .container .card .face.face2 .content a {
+            text-decoration: none;
+            color: black;
+            box-sizing: border-box;
+            outline: 1px dashed rgb(0, 0, 0);
+            padding: 10px;
+            margin: 15px 0 0;
+            display: inline-block;
+        }
+        
+        .container .card .face.face2 .content a:hover {
+            background: #333;
+            color: whitesmoke;
+            box-shadow: inset 0px 0px 10px rgba(151, 151, 151, 0.5);
+        }
+        i{
+   color: #fff;
+            }
+            </style>
+            <header>
+                
+                <a href="/"><i class="fas fa-home fa-3x"></i></a>     
+                
+                <ul>
+                    
+                    <li><a href="/appi">Lyn</a></li>
+                </ul>
+            
+            </header>
+             <div class="container">
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">
+                            <i class="fas fa-city "></i>
+                            <h3>ZTART-OP</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>
+                                Ztart-op es una empresa desarrolladora de software, la cual busca ayudar a las personas que tengan alguna discapacidad, para apoyar a los discapacitados a que puedan llevar su vida cotidiana sin ningún problema. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">
+                            <i class="far fa-eye"></i>
+                            <h3>VISIÓN</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>
+                                Ztart-op es una empresa desarrolladora de software, la cual busca ayudar a las personas que tengan alguna discapacidad, para apoyar a los discapacitados a que puedan llevar su vida cotidiana sin ningún problema. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">   
+                            <i class="fas fa-crosshairs"></i>
+                            <h3>OBJETIVO</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>
+                                Desarrollar un software que sirva de apoyo a las personas con discapacidad visual.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        
+            <script src="https://kit.fontawesome.com/95a02bd20d.js"></script>
+        </body>
+        
+        </html>
+</body>
+</html>
