@@ -54,6 +54,9 @@ controller.lyn = (req, res) => {
 controller.awb = (req, res) => {
     res.render('exito')
 };
+controller.mal = (req, res) => {
+    res.render('terminozz')
+};
 controller.chin = (req, res) => {
     res.render('error')
 };
@@ -83,6 +86,7 @@ controller.edit = (req, res) => {
 controller.update = (req, res) => {
             res.redirect('/ini');
 };
+
 
 controller.save = async(req,res)=>{
     if(req.body.numero.length === 10){

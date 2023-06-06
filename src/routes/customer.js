@@ -11,6 +11,7 @@ router.get('/formu', customerController.for);
 router.post('/add', customerController.save);
 router.get('/nosalio', customerController.chin);
 router.get('/salio', customerController.awb);
+router.get('/terminos', customerController.mal);
 
 
 module.exports = router;
