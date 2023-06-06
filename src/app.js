@@ -17,11 +17,11 @@ app.set('view engine', 'ejs');
 // middlewares
 app.use(morgan('dev'));
 app.use(myConnection(mysql, {
-    host: 'localhost',
+    host: 'containers-us-west-171.railway.app',
     user: 'root',
-    password: 'alery050831',
-    port: 3306,
-    database: 'lyn'
+    password: 'hN17fVdPAwfnl7xPIFHg',
+    port: 7259,
+    database: 'railway'
 }, 'single'));
 app.use(express.urlencoded({ extended: false }));
 

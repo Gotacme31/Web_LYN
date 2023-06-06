@@ -50,6 +50,16 @@ controller.list = (req, res) => {
 controller.lyn = (req, res) => {
     res.render('inicio')
 };
+
+controller.awb = (req, res) => {
+    res.render('exito')
+};
+controller.chin = (req, res) => {
+    res.render('error')
+};
+controller.for = (req, res) => {
+    res.render('formulario')
+};
 controller.si = (req, res) => {
     console.log('si')
     res.render('aplicacion')
@@ -74,13 +84,22 @@ controller.update = (req, res) => {
             res.redirect('/ini');
 };
 
-controller.delete = (req, res) => {
-    const { id } = req.params;
-    req.getConnection((err, connection) => {
-        connection.query('DELETE FROM customer WHERE id = ?', [id], (err, rows) => {
-            res.redirect('/');
-        });
-    });
-}
-
+controller.save = async(req,res)=>{
+    if(req.body.numero.length === 10){
+        console.log("andale si")
+        const data = req.body;
+            req.getConnection((err, conn) => {
+                conn.query('INSERT INTO usuario SET ?', data, (err, rows) => {
+                    
+        if(err){
+            console.log(error)
+            console.log("no se pudo registraaaar")
+            res.redirect('nosalio')
+        }
+        console.log("si se registro uwur")
+        res.redirect('salio')
+        })});
+    }
+        console.log("el numero no es correcto")
+    };
 module.exports = controller;

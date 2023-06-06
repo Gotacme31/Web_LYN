@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Lyn</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Pagina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #F2F3F4;
+            margin-top: 150px;
+        }
+
+        .image {
+            flex: 1;
+            background: url('image.jpg') center center/cover;
+            border-right: 1px solid #D1D3D4;
+            display: flex;
+        }
+
+        .form {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #FFFFFF;
+        }
+
+        .form-container {
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #D1D3D4;
+            border-radius: 5px;
+            background-color: #F2F3F4;
+            color: #333333;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #000000;
+            color: #FFFFFF;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 30px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+        background-color: #000000;
+        border-radius: 5px;
+        height: 120px;
+      }
+      header .logo {
+        color: #000000;
+        font-size: 700;
+        text-decoration: none;
+        font-size: 100px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      header ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      header ul li {
+        list-style: none;
+        margin: 20px;
+      }
+      header ul li a {
+        text-decoration: none;
+        padding: 6px 15px;
+        color: #ffffff;
+        border-radius: 20px;
+        
+      }
+
+      header ul li a:hover,
+      header ul li a.active {
+        background: #dfdede;
+      }
+      #loguito{
+        background-color: #ffffff;
+        width:99px;
+        border-radius: 50%;
+      }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div id="loguito">
+        <a href="/"><img src="/public/img/lynya.png" width="100px"/></a>    
+      </div>
+    
+        <ul>
+          <li><a href="/appi">Lyn</a></li>
+          <li><a href="/empres">About</a></li>
+        </ul>
+      </header>
+    <div class="container">
+      
+        <div class="image">
+            <img src="public/img/ciego.jpg" width="500px" height="500px" />
+        </div>
+        <div class="form">
+            <div class="form-container">
+              <form action="/add" method="post">
+                <div class="form-group">
+                  <div aling-content="center">
+                    <h4> Ayudanos contestando este formulario</h4>
+                  </div>
+                    <label for="numero">Número (10 dígitos máx.)</label>
+                    <input id="numero" max="9999999999" type="text" name="numero" placeholder="Numero (10 digitos)" required="true" minlength="10" maxlength="10">
+                </div>
+                <div class="form-group">
+                    <label for="edad">Edad</label>
+                    <select id="edad" name="edad">
+                        <option value="0">Selecciona un rango de edad</option>
+                        <option value="40">0-49 años</option>
+                        <option value="50">50 - 59 años</option>
+                        <option value="60">60 - 69 años</option>
+                        <option value="70">70 - 79 años</option>
+                        <option value="80"> +80 años</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="enfermedad">Enfermedad</label>
+                    <select id="enfermedad" name="id_enfer">
+                        <option value="0">Selecciona una enfermedad</option>
+                        <option value="1">Cataratas</option>
+                        <option value="2">Albinismo</option>
+                        <option value="3">Aniridia</option>
+                        <option value="4"> Degeneracion Macular</option>
+                        <option value="5">Glaucoma</option>
+                        <option value="6">Miopia Magna</option>
+                        <option value="7">Retinopatia Diabetica</option>
+                        <option value="8">Distrofias Hereditarias de la Retina</option>
+                        <!-- Agrega aquí las opciones de enfermedades -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="estado" >Alcaldia</label>
+                    <select id="estado" name="id_alcaldia">
+                        <option value="0">Selecciona una Alcaldia</option>
+                        <option value="1">Alvaro Obregon</option>
+                        <option value="2">Azcapotzalco</option>
+                        <option value="3">Benito Juarez</option>
+                        <option value="4">Coyoacan</option>
+                        <option value="5">Cuajimalpa de Morelos</option>
+                        <option value="6">Cuauhtemoc</option>
+                        <option value="7">Gustavo A. Madero</option>
+                        <option value="8">Iztacalco</option>
+                        <option value="9">Iztapalapa</option>
+                        <option value="10">La Magdalena Contreras</option>
+                        <option value="11">Miguel Hidalgo</option>
+                        <option value="12">Milpa Alta</option>
+                        <option value="13">Tlahuac</option>
+                        <option value="14">Tlalpan</option>
+                        <option value="15">Venustiano Carranza</option>
+                        <option value="16">Xochimilco</option>
+
+                        <!-- Agrega aquí las opciones de estados -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sexo">Sexo</label>
+                    <select id="sexo" name="id_sexo">
+                      <option value="0">Selecciona un sexo</option>
+                      <option value="2">Femenino</option>
+                      <option value="1">Masculino</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <button type="submit">Registrar Respuesta</button>
+              </div>
+            </form>
+          </div>
+      </div>
+  </div>
+
+ <script src="../routes/customer.js"></script>
+</body>
+</html>

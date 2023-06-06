@@ -1,157 +1,190 @@
 <style>
-    body{
+    *{ 
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+body {
+  }
+  text {
+    color: #000000;
+  }
+  header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 30px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+        background-color: #000000;
+        border-radius: 5px;
+        height: 120px;
+      }
+      header .logo {
+        color: #000000;
+        font-size: 700;
+        text-decoration: none;
+        font-size: 100px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      header ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      header ul li {
+        list-style: none;
+        margin: 20px;
+      }
+      header ul li a {
+        text-decoration: none;
+        padding: 6px 15px;
+        color: #ffffff;
+        border-radius: 20px;
         
-        
-    }
-    text{
-       color: #fff;
-    }
+      }
+
+      header ul li a:hover,
+      header ul li a.active {
+        background: #dfdede;
+      }
+      #loguito{
+        background-color: #ffffff;
+        width:99px;
+        border-radius: 50%;
+      }
 </style>
-   <% include partials/_header %> 
-    <% if (data) { %>
-        <% for(var i = 0; i < data.length; i++) { %>
-            <% if (data[i].id_sexo == '1') {
-            n++;
-            } else {
-                m++;
-        }%>
-                <% switch (data[i].id_enfer) {
-                case 1:
-                    e1++;
-                break;
-                case 2:
-                    e2++;
-                break;
-                case 3:
-                    e3++;
-                break;
-                case 4:
-                    e4++;
-                break;
-                case 5:
-                    e5++;
-                break;
-                case 6:
-                    e6++;
-                break;
-                case 7:
-                    e7++;
-                break;
-                case 8:
-                    e8++;
-                break;
-            } %>
-                    <% if(data[i].edad >= 40 && data[i].edad< 60){
-                ed1++;
-            }else {
-                if(data[i].edad >= 60 && data[i].edad< 70){
-                    ed2++;
-                } else {
-                    if(data[i].edad >= 70 && data[i].edad< 80){
-                        ed3++;
-                    } else {
-                        if(data[i].edad >= 80) {
-                            ed4++;
-                        }
-                    }
-                }
-            }%>
-                        <% } %>
-                            <% } %>
-                                <style>
-                                    
-                                    
-                                    canvas {
-                                        max-width: 500px;
-                                        max-height: 500px;
-                                        
-                                    }
-                                    
-                                    .center {
-                                        display: flex;
-                                        justify-content: space-around;
-                                        flex-wrap: wrap;
-                                        align-items: center;
-                                        padding: 10px;
-                                        
-                                    }
-                                </style>
-                                <div class="center">
-                                    <canvas id="myChart"></canvas>
-                                    <canvas id="enfermedad"></canvas>
-                                    <canvas id="edad"></canvas>
-                                </div>
-                                
-                                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                                <script>
-                                    
-                                    const ctx = document.getElementById('myChart');
-                                    new Chart(ctx, {
-                                        type: 'bar',
-                                        data: {
-                                            labels: ['Datos', 'Hombres', 'Mujeres'],
-                                            datasets: [{
-                                                label: 'Porcentaje de sexo en los usuarios',
-                                                data: ['<%= data.length %>', '<%= n %>', '<%= m %>'],
-                                                borderWidth: 1,
-                                                backgroundColor: 'rgba(213, 250, 247 )',
-                                                
-                                            
-                                            }]
-                                        },
-                                        options: {
-                                            scales: {
-                                                y: {
-                                                    beginAtZero: true
-                                                }
-                                            }
-                                        }
-                                    });
-                                </script>
-                                <script>
-                                    const enf = document.getElementById('enfermedad');
-                                    new Chart(enf, {
-                                        type: 'bar',
-                                        data: {
-                                            labels: ['Cataratas', 'Albinismo', 'Aniridia', 'Degeneracion Macular', ' Glaucoma', 'Miopia Magna', 'Retinopatia Diabetica', ' Distrofias Hereditarias de la Retina'],
-                                            datasets: [{
-                                                label: 'Porcentaje de Enfermedad en los usuarios',
-                                                data: ['<%= e1 %>', '<%= e2 %>', '<%= e3 %>', '<%= e4 %>', '<%= e5 %>', '<%= e6 %>', '<%= e7 %>', '<%= e8 %>'],
-                                                borderWidth: 1,
-                                                backgroundColor: 'rgba(213, 250, 247 )',
-                                            }]
-                                        },
-                                        options: {
-                                            scales: {
-                                                y: {
-                                                    beginAtZero: true
-                                                }
-                                            }
-                                        }
-                                    });
-                                </script>
-                                <script>
-                                    const ed = document.getElementById('edad');
-                                    new Chart(ed, {
-                                        type: 'bar',
-                                        data: {
-                                            labels: ['Edad 50 - 60', 'Edad 61-70', 'Edad 70-80', '80+'],
-                                            datasets: [{
-                                                label: 'Porcentaje de edad en los usuarios',
-                                                data: ['<%= ed1 %>', '<%= ed2 %>', '<%= ed3 %>', '<%= ed4 %>'],
-                                                borderWidth: 1,
-                                                backgroundColor: 'rgba(213, 250, 247  )',
-                                                
-                                            }]
-                                        },
-                                        options: {
-                                            scales: {
-                                                y: {
-                                                    beginAtZero: true
-                                                }
-                                            }
-                                        }
-                                    });
-                                </script>
-                                <% include partials/_footer %>
-                                
+<header>
+    <div id="loguito">
+    <a href="/"><img src="/public/img/lynya.png" width="100px"/></a>    
+  </div>
+
+    <ul>
+      <li><a href="/appi">Lyn</a></li>
+      <li><a href="/empres">About</a></li>
+    </ul>
+  </header>
+  <div>
+ <% if (data) { %> <% for(var i = 0; i <
+data.length; i++) { %> <% if (data[i].id_sexo == '1') { n++; } else { m++; }%>
+<% switch (data[i].id_enfer) { case 1: e1++; break; case 2: e2++; break; case 3:
+e3++; break; case 4: e4++; break; case 5: e5++; break; case 6: e6++; break; case
+7: e7++; break; case 8: e8++; break; } %> <% if(data[i].edad >= 40 &&
+data[i].edad< 60){ ed1++; }else { if(data[i].edad >= 60 && data[i].edad< 70){
+ed2++; } else { if(data[i].edad >= 70 && data[i].edad< 80){ ed3++; } else {
+if(data[i].edad >= 80) { ed4++; } } } }%> <% } %> <% } %>
+<style>
+  canvas {
+    max-width: 400px;
+    max-height: 400px;
+    background-color: rgb(253, 253, 253);
+  }
+
+  .center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 160px;
+  }
+</style>
+<div class="center">
+  <canvas id="myChart"></canvas>
+  <canvas id="enfermedad"></canvas>
+  <canvas id="edad"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById("myChart");
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: ["Datos", "Hombres", "Mujeres"],
+      datasets: [
+        {
+          label: "Porcentaje de sexo en los usuarios",
+          data: ["<%= data.length %>", "<%= n %>", "<%= m %>"],
+          borderWidth: 5,
+          backgroundColor: "black",
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+</script>
+<script>
+  const enf = document.getElementById("enfermedad");
+  new Chart(enf, {
+    type: "bar",
+    data: {
+      labels: [
+        "Cataratas",
+        "Albinismo",
+        "Aniridia",
+        "Degeneracion Macular",
+        " Glaucoma",
+        "Miopia Magna",
+        "Retinopatia Diabetica",
+        " Distrofias Hereditarias de la Retina",
+      ],
+      datasets: [
+        {
+          label: "Porcentaje de Enfermedad en los usuarios",
+          data: [
+            "<%= e1 %>",
+            "<%= e2 %>",
+            "<%= e3 %>",
+            "<%= e4 %>",
+            "<%= e5 %>",
+            "<%= e6 %>",
+            "<%= e7 %>",
+            "<%= e8 %>",
+          ],
+          borderWidth: 5,
+          backgroundColor: "black",
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+</script>
+<script>
+  const ed = document.getElementById("edad");
+  new Chart(ed, {
+    type: "bar",
+    data: {
+      labels: ["Edad 50 - 60", "Edad 61-70", "Edad 70-80", "80+"],
+      datasets: [
+        {
+          label: "Porcentaje de edad en los usuarios",
+          data: ["<%= ed1 %>", "<%= ed2 %>", "<%= ed3 %>", "<%= ed4 %>"],
+          borderWidth: 5,
+          backgroundColor: "black",
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+</script>
+
